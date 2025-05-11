@@ -14,3 +14,5 @@ I referenced https://nodejs.org/api/child_process.html and https://developer.moz
 
 What is the span of the parallel program, in terms of worst-case $\Theta$? Hint:
 It may help to consider the DAG of the parallel program.
+
+While this has parallelism, the span would still be Θ(nlogn). To show this, starting from the beginning, we check if the array is a empty or has one element. Next we move to creating and waiting for the results of two workers, these two workers each take half of an array and use the recursive mergesort implementation to sort their arrays, this each would take O(nlogn). So, while this is a parallel version, the span would still be Θ(nlogn).
